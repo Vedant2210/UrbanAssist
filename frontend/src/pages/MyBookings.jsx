@@ -10,7 +10,7 @@ const MyBookings = () => {
     const fetchBookings = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/bookings/user/${user.id}`
+          `https://urbanassist-1.onrender.com/api/bookings/user/${user.id}`
         );
 
         setBookings(res.data);

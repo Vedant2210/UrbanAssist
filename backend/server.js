@@ -9,10 +9,11 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 
 app.use(cors({
-  origin: "*",
+  origin: ["https://urban-assist-psi.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 app.use(express.json());
 
 // Routes

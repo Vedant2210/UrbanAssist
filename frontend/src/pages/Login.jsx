@@ -36,7 +36,7 @@ const Login = () => {
     <div className="min-h-screen flex justify-center items-center bg-[#0B0B0F] text-white">
       <div className="bg-[#14141B] p-8 rounded-xl shadow-lg w-[400px] border border-white/10">
         <h2 className="text-3xl font-bold text-center text-[#38BDF8] mb-6">
-          Login
+          Login Please
         </h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">

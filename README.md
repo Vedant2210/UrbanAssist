@@ -62,7 +62,7 @@ UrbanAssist follows an event-driven asynchronous architecture.
 6️⃣ API responds immediately (non-blocking)
 
 # Folder Structure
-
+```
 UrbanAssist/
 ├── client/                 # React Frontend
 │   ├── components/
@@ -88,13 +88,13 @@ UrbanAssist/
 ├── package.json
 └── README.md
 
-
+```
 
 # 🧠 Why Redis + BullMQ?
 
 UrbanAssist uses Redis + BullMQ to implement asynchronous job processing.
 
-# 🔥 Advantages:
+###🔥 Advantages:
 
 🏎️ Faster API responses (no blocking operations)
 ⚙️ Background job execution

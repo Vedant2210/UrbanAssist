@@ -1,111 +1,105 @@
-# UrbanAssist
+# 🚀 UrbanAssist — MERN Service Booking Platform
+UrbanAssist is a scalable MERN-based doorstep service booking platform designed to connect users with trusted local service providers.
+It uses Redis + BullMQ for asynchronous provider assignment and integrates Twilio SMS notifications for real-time booking updates.
 
-A scalable MERN-based doorstep service booking platform with asynchronous provider assignment and SMS notifications.
+# Overview
+UrbanAssist allows users to book essential home services such as:
+🧑‍🍳 Home Cook
+🌿 Gardening
+🐜 Pest Control
+⚡ Electrician
+🚰 Plumber
+❄️ AC Repair
+🧹 Cleaning
+💇 Salon at Home
+➕ And more...
+The system is designed for high scalability and performance, ensuring smooth booking experiences even under heavy load.
 
-🌟 Overview
+# Features
+✅ Secure User Authentication — JWT-based login & signup with bcrypt password hashing.
+✅ Service-Based Booking System — Dynamic service selection with pincode-based provider matching.
+✅ Booking History — Users can view all past bookings.
+✅ Asynchronous Provider Assignment — Redis + BullMQ queue ensures non-blocking booking flow.
+✅ Background Worker Architecture — Provider matching handled separately from API request lifecycle.
+✅ SMS Notifications — Automatic booking confirmation and provider details via Twilio SMS API.
+✅ Scalable & Production-Ready Design — Built to support horizontal scaling.
 
-UrbanAssist is a full-stack service booking platform that connects users with local service providers for services like:
+# Tech Stack
 
-Home Cook
+## Frontend
+| Technology           | Purpose             |
+| -------------------- | ------------------- |
+| **React JS**         | Component-based UI  |
+| **Tailwind CSS**     | Responsive styling  |
+| **Axios**            | API communication   |
+| **React Router DOM** | Client-side routing |
 
-Gardening
+## Backend
+| Technology          | Purpose              |
+| ------------------- | -------------------- |
+| **Node.js**         | Server runtime       |
+| **Express.js**      | REST API framework   |
+| **MongoDB Atlas**   | Cloud database       |
+| **JWT**             | Authentication       |
+| **bcrypt**          | Password hashing     |
+| **Redis (Upstash)** | In-memory data store |
+| **BullMQ**          | Background job queue |
+| **Twilio SMS API**  | SMS notifications    |
 
-Pest Control
+# Scalable Architecture
 
-Electrician
+🏗️ Scalable Architecture
 
-Plumber
+UrbanAssist follows an event-driven asynchronous architecture.
 
-AC Repair
+🔄 Booking Flow
 
-Cleaning
+1️⃣ User submits booking request
+2️⃣ Booking is stored instantly in MongoDB
+3️⃣ Booking ID is pushed into Redis queue
+4️⃣ Background worker assigns provider
+5️⃣ Twilio sends SMS confirmation
+6️⃣ API responds immediately (non-blocking)
 
-Salon at Home
+# Folder Structure
 
-And more...
+UrbanAssist/
+├── client/                 # React Frontend
+│   ├── components/
+│   ├── pages/
+│   ├── services/           # Axios API calls
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── server/                 # Node Backend
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   ├── config/
+│   │   ├── db.js           # MongoDB connection
+│   │   ├── redis.js        # Redis connection
+│   ├── queues/
+│   │   ├── bookingQueue.js # BullMQ queue setup
+│   ├── workers/
+│   │   ├── bookingWorker.js # Provider assignment logic
+│   ├── server.js
+│
+├── package.json
+└── README.md
 
-The platform is designed with scalability in mind, using Redis-based job queues for handling high request loads efficiently.
 
-🏗️ Tech Stack
-🔹 Frontend
 
-React.js
+# 🧠 Why Redis + BullMQ?
 
-Tailwind CSS
+UrbanAssist uses Redis + BullMQ to implement asynchronous job processing.
 
-Axios
+# 🔥 Advantages:
 
-React Router DOM
+🏎️ Faster API responses (no blocking operations)
+⚙️ Background job execution
+📊 Better load management
+🔄 Retry mechanisms for failed jobs
+📈 Ready for microservices transition
 
-🔹 Backend
-
-Node.js
-
-Express.js
-
-MongoDB Atlas
-
-JWT Authentication
-
-Redis (Upstash)
-
-BullMQ (Job Queue)
-
-Twilio SMS API
-
-⚡ Key Features
-✅ User Authentication
-
-Secure Signup & Login
-
-JWT-based authentication
-
-Password hashing with bcrypt
-
-✅ Smart Booking System
-
-Service-based booking form
-
-Pincode-based provider matching
-
-Booking history for logged-in users
-
-✅ Asynchronous Processing (Scalable Architecture)
-
-Redis + BullMQ queue for handling bookings
-
-Background worker for provider assignment
-
-Non-blocking request handling
-
-Ready for horizontal scaling
-
-✅ SMS Notifications
-
-Automatic SMS confirmation via Twilio
-
-Sends provider details after assignment
-
-Uses international format (+91XXXXXXXXXX)
-
-🧠 Scalability Architecture
-
-When a booking is submitted:
-
-Booking is stored instantly in MongoDB
-
-Booking ID is pushed to Redis queue
-
-Worker processes provider assignment
-
-SMS is sent asynchronously
-
-User gets fast response (no blocking)
-
-This ensures:
-
-High concurrency handling
-
-Reduced API response time
-
-Better system stability under load
+This architecture makes UrbanAssist production-grade and scalable, unlike traditional synchronous booking systems.

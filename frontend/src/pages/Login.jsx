@@ -17,8 +17,24 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // ✅ Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert("Please enter a valid email address ❌");
+      return;
+    }
+
+    // ✅ Password validation
+    if (formData.password.length < 6) {
+      alert("Password must be at least 6 characters ❌");
+      return;
+    }
+
     try {
-      const res = await axios.post("https://urbanassist-1.onrender.com/api/auth/login", formData);
+      const res = await axios.post(
+        "http://localhost:5000/api/auth/login",
+        formData
+      );
 
       alert("Login Successful ✅");
 
@@ -40,6 +56,7 @@ const Login = () => {
         </h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+
           <input
             type="email"
             name="email"
@@ -53,7 +70,7 @@ const Login = () => {
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Password (min 6 characters)"
             value={formData.password}
             onChange={handleChange}
             className="p-3 rounded bg-black text-white border border-white/10"

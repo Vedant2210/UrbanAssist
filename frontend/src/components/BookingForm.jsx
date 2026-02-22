@@ -42,7 +42,7 @@ const BookingForm = ({ serviceName }) => {
     console.log("Sending booking:", bookingData);
 
     const res = await axios.post(
-      "http://localhost:5000/api/bookings",
+      "https://urbanassist-1.onrender.com/api/bookings",
       bookingData
     );
 

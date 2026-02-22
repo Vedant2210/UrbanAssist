@@ -52,7 +52,7 @@ const Signup = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", formData);
+      await axios.post("https://urbanassist-1.onrender.com/api/auth/signup", formData);
 
       alert("Signup Successful ✅ Please Login");
       navigate("/login");

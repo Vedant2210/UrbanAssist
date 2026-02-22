@@ -52,10 +52,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        <Route path="/homecook" element={<HomeCook />} />
+        {/* <Route path="/homecook" element={<HomeCook />} />
         <Route path="/gardening" element={<Gardening />} />
         <Route path="/pestcontrol" element={<PestControl />} />
-        <Route path="/subscribe" element={<Subscribe />} />
+        <Route path="/subscribe" element={<Subscribe />} /> */}
       </Routes>
     </div>
   );

@@ -94,7 +94,7 @@ UrbanAssist/
 
 UrbanAssist uses Redis + BullMQ to implement asynchronous job processing.
 
-###🔥 Advantages:
+### 🔥 Advantages:
 
 🏎️ Faster API responses (no blocking operations)
 ⚙️ Background job execution
@@ -103,3 +103,58 @@ UrbanAssist uses Redis + BullMQ to implement asynchronous job processing.
 📈 Ready for microservices transition
 
 This architecture makes UrbanAssist production-grade and scalable, unlike traditional synchronous booking systems.
+
+--
+# 📩 SMS Notification Flow
+
+UrbanAssist integrates Twilio SMS API to:
+
+📲 Send booking confirmation instantly
+
+👨‍🔧 Send assigned provider details
+
+🌍 Support international format (+91XXXXXXXXXX)
+
+This improves trust and real-time communication with users.
+--
+## 🚀 How to Run on Your System
+
+### 1️⃣ Clone the Repository
+```
+git clone https://github.com/your-username/UrbanAssist.git
+```
+### 2️⃣ Navigate to Project Directory
+```
+cd UrbanAssist
+```
+### 3️⃣ Setup Backend
+```
+cd server
+npm install
+```
+
+### Create a .env file:
+```
+PORT=5000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+REDIS_URL=your_redis_url
+TWILIO_SID=your_sid
+TWILIO_AUTH_TOKEN=your_token
+TWILIO_PHONE=your_twilio_number
+```
+### Run backend:
+```
+npm run dev
+```
+### 4️⃣ Setup Frontend
+```
+cd client
+npm install
+npm run dev
+```
+
+### 5️⃣ Open in Browser
+```
+http://localhost:5173/
+```

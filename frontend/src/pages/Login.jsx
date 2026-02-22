@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://192.168.31.56:5000/api/auth/login", formData);
+      const res = await axios.post("https://urbanassist-1.onrender.com/api/auth/login", formData);
 
       alert("Login Successful ✅");
 

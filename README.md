@@ -1,4 +1,4 @@
-🚀 UrbanAssist
+# UrbanAssist
 
 A scalable MERN-based doorstep service booking platform with asynchronous provider assignment and SMS notifications.
 
